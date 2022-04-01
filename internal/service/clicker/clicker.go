@@ -6,9 +6,11 @@ import (
 	homework "kadam_test/internal/proto"
 )
 
-func (s *Service) DecodeProtoClick(data string) (*homework.Click, error) {
-	sec := "imSoVerySafe"
+const (
+	sec = "imSoVerySafe"
+)
 
+func (s *Service) DecodeProtoClick(data string) (*homework.Click, error) {
 	raw, err := base64.StdEncoding.DecodeString(data)
 	if err != nil {
 		return nil, err
