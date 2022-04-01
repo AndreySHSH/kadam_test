@@ -1,0 +1,12 @@
+syntax = 'proto3';
+
+option go_package = "demo.kadam.net/go-interview/homework";
+
+message Click {
+  string id = 1;
+  // Auction user agent.
+  string ua = 2;
+  // Cost-per-click.
+  double cpc = 3;
+  string redirect_uri = 4;
+}
