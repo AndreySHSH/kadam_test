@@ -22,10 +22,10 @@ func (c *Repository) CheckUniqueness(id string) (bool, error) {
 func (c *Repository) Create(click *homework.Click, IsSuspicious bool) error {
 	var clickModel migration.Click
 
-	clickModel.Id = click.Id
-	clickModel.Ua = click.Ua
-	clickModel.Cpc = click.Cpc
-	clickModel.RedirectUri = click.RedirectUri
+	clickModel.Id = click.GetId()
+	clickModel.Ua = click.GetUa()
+	clickModel.Cpc = click.GetCpc()
+	clickModel.RedirectUri = click.GetRedirectUri()
 	clickModel.IsSuspicious = IsSuspicious
 
 	if err := c.Gorm.Clauses(clause.OnConflict{

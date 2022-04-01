@@ -27,7 +27,7 @@ func (h *Handlers) ClickBanner(ctx iris.Context) {
 		logger.Error(err)
 	}
 
-	if !uniqueness || clickData.Ua != ctx.Request().UserAgent() {
+	if !uniqueness || clickData.GetUa() != ctx.Request().UserAgent() {
 		err := h.ClicksRepository.Create(clickData, true)
 		if err != nil {
 			// TODO: remake
