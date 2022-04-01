@@ -21,7 +21,7 @@ func (h *Handlers) ClickBanner(ctx iris.Context) {
 		return
 	}
 
-	uniqueness, err := h.ClicksRepository.CheckUniqueness(clickData.Id)
+	uniqueness, err := h.ClicksRepository.CheckUniqueness(clickData.GetId())
 	if err != nil {
 		// TODO: remake
 		logger.Error(err)
