@@ -36,5 +36,6 @@ func (c *Repository) Create(click *homework.Click, IsSuspicious bool) error {
 	}).Create(&clickModel).Error; err != nil {
 		return err
 	}
+
 	return nil
 }
