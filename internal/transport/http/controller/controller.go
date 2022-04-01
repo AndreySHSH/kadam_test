@@ -23,7 +23,7 @@ func NewController(http *loaders.HTTP, clickerService *clicker.Service, clicksRe
 	}
 
 	iris.RegisterOnInterrupt(func() {
-		err := controller.Transport.Iris.Shutdown(*controller.Transport.Ctx)
+		err := controller.Transport.Iris.Shutdown(*controller.Transport.CTX)
 		if err != nil {
 			logger.Error(err)
 		}

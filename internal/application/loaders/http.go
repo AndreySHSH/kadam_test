@@ -8,7 +8,7 @@ import (
 
 type HTTP struct {
 	Iris *iris.Application
-	Ctx  *context.Context
+	CTX  *context.Context
 }
 
 // InitHTTPServer - init instance http server
@@ -16,7 +16,7 @@ func InitHTTPServer(ctx *context.Context) *HTTP {
 
 	server := HTTP{
 		Iris: iris.Default(),
-		Ctx:  ctx,
+		CTX:  ctx,
 	}
 
 	crs := cors.New(cors.Options{
