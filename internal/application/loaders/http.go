@@ -22,7 +22,7 @@ func InitHTTPServer(ctx *context.Context) *HTTP {
 	crs := cors.New(cors.Options{
 		AllowedOrigins:   []string{"*"},
 		AllowCredentials: true,
-		AllowedMethods:   []string{"PUT", "POST", "GET", "DELETE"},
+		AllowedMethods:   []string{"GET"},
 		AllowedHeaders:   []string{"*"},
 		Debug:            false,
 	})
